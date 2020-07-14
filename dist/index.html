@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="inpContainer">
+        <input type="text" id="teamNameInput" placeholder="Please insert a team name">
+        <button class="serBtn" onclick=fetchTeamName()>Search</button>
+        <button class="dreamTeamBtn" onclick=fetchDreamTeam()>Dream Team</button>
+    </div>
+
+    <div id="playersContainer"></div>
+    <div id="dreamContainer"></div>
+
+
+    <script id="playersTemplate" type="text/x-handlebars-template">
+        <br><br><br><br><a id="rosterTitle">~ My Roster ~</a><br><br><br><br>
+        <div class="Container">
+            {{#each data}}
+            <div class="coach">
+                <img class="img" onclick="playerStats(this)" src={{this.pic}} onerror="this.onerror=null;this.src='https://nba-players.herokuapp.com/players/Olynyk/Kelly';">
+                <div class="dreamerBtn" onclick=makeDreamer(this)>Make a Dreamer</div>
+                <a class="firstNameText">{{this.firstName}}</a>
+                <a class="lastNameText">{{this.lastName}}</a>
+                <div class="jersey">{{this.jersey}}</div>
+                <div class="Position">{{this.pos}}</div>
+            </div>
+            {{/each}}
+        </div>
+    </script>
+
+    <script id="statsTemplate" type="text/x-handlebars-template">
+      <br><br><br><br><br><br>game statistics:<br>
+      <p>assists:{{this.assists_per_game}}</p>
+      <p>rebounds:{{this.rebounds_per_game}}</p> 
+      <p>blocks:{{this.blocks_per_game}}</p> 
+      <p>steals:{{this.steals_per_game}}</p> 
+      <p>minutes:{{this.minutes}}</p><br><br><br><br><br><br>
+    </script>
+
+    <script id="dreamTemplate" type="text/x-handlebars-template">
+        <br><br><br><br><a id="dreamTitle">...<<<^~ Dream Team ~^>>>...</a><br><br><br><br>
+        <div class="Container">
+            {{#each data}}
+              <div class="dreamCoach">{{{this}}}</div>
+            {{/each}}
+        </div>
+    </script>
+  
+    <script src="/jquery/dist/jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script src="renderer.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
