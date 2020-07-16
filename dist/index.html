@@ -48,7 +48,7 @@
         <br><br><br><br><a id="dreamTitle">...<<<^~ Dream Team ~^>>>...</a><br><br><br><br>
         <div class="Container">
             {{#each data}}
-              <div class="dreamCoach">{{{this}}}</div>
+              <div class="dreamCoach"><div class="deletePlayer" onclick="deletePlayer(this)">X</div>{{{this}}}</div>
             {{/each}}
         </div>
     </script>

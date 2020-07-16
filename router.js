@@ -63,4 +63,16 @@ router.post('/roster', function (req, res) {
                  res.end()
         }
 })
+
+router.delete('/roster', function (req, res) {
+    let dreamPlayer = (JSON.parse(JSON.stringify(req.body)))
+
+    // const playerExpel = (p) => p =;
+    let ind = dreamTeam.findIndex(dreamPlayer)
+    console.log(ind)
+    // dreamTeam.findIndex
+    dreamTeam.splice(ind, 1)
+    res.end()
+})
+
 module.exports = router

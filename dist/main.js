@@ -54,6 +54,19 @@ const updateTeams = function (team) {
 
 arr.forEach(t => {updateTeams({ teamName: t.team, teamId: t.id })})
 
+const deletePlayer = function(el){
+    let playerData = {obj: $(el).parent().html()}
+
+    $.ajax({
+        url: '/roster',
+        method: "DELETE",
+        data: playerData,
+        success: function (response) {          
+            console.log("Remove complete") }
+    })
+}
+
+
 
 
 

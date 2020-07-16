@@ -76,6 +76,17 @@ input:focus {
  background: black;
   color: silver;
 }
+.deletePlayer{
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  cursor: pointer;
+  color: #ff0000;
+  font-size:20px;
+  font-weight: bolder;
+  font-size: 30px;
+}
+
 #rosterTitle,#dreamTitle{
   color: rgb(253, 253, 253);
   text-shadow: 10px 10px 10px rgb(241, 146, 3);
@@ -106,4 +117,4 @@ input:focus {
     background:linear-gradient(to bottom, gold 5%, #f56200 100%);
       color: white;
 }
-  
+
